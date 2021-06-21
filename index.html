@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Carlos Duty</title>
+    </head>
+    <link href="https://allfont.es/allfont.css?fonts=stencil" rel="stylesheet" type="text/css" />
+<body>
+    
+      <div id="Fondo" style="background-image: url(https://i.ibb.co/8YHkzKL/Fondo.jpg);">
+      <div id="contador"></div>
+      <div id="punteo"></div>
+      <div id="uno" style="background-image: url(https://i.ibb.co/NxTXsVb/01.jpg);" ondblclick=ocultaruno()></div>
+      <div id="dos" style="background-image: url(https://i.ibb.co/kSGdqxn/02.jpg);" ondblclick=ocultardos()></div>
+      <div id="tres" style="background-image: url(https://i.ibb.co/HYwMXhN/03.jpg);" ondblclick=ocultartres()></div>
+      <div id="cuatro" style="background-image: url(https://i.ibb.co/dLjLJfY/04.jpg);" ondblclick=ocultarcuatro()></div>
+      <div id="cinco" style="background-image: url(https://i.ibb.co/BGhP64c/05.jpg);" ondblclick=ocultarcinco()></div>
+      <div id="seis" style="background-image: url(https://i.ibb.co/2y0HS7J/06.jpg);" ondblclick=ocultarseis()></div>
+
+    </div>
+    <div id="Inicio" style="background-image: url(https://i.ibb.co/6ySZwKF/call-of-duty-1-en-espanol-pc-digital-D-NQ-NP-893772-MLA29315750764-022019-F.jpg);">
+    <div class="titulo_boton">
+        <button type="button" onClick="jugar2();" title="" class="boton">Jugar</button></div>
+     </div>
+   <script type="text/javascript">
+
+/*window.addEventListener("load",function(){
+	document.getElementById("uno").addEventListener("click",sonarPajaros);
+});
+
+function sonarPajaros(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","https://www.elongsound.com/images/mp3/timbre_de_bicicleta_2.mp3");
+	document.body.appendChild(sonido);
+	document.getElementById("uno").removeEventListener("click",sonarPajaros);
+}*/
+
+    var inicio = document.getElementById("Inicio");
+    var fondo = document.getElementById("Fondo");
+    var uno = document.getElementById("uno");
+    var dos = document.getElementById("dos");
+    var tres = document.getElementById("tres");
+    var cuatro = document.getElementById("cuatro");
+    var cinco = document.getElementById("cinco");
+    var seis = document.getElementById("seis");
+
+    fondo.style.display = "none";
+    uno.style.display = "none";
+    dos.style.display = "none";
+    tres.style.display = "none";
+    cuatro.style.display = "none";
+    cinco.style.display = "none";
+    seis.style.display = "none";
+
+    function iniciar(){
+    inicio.style.display = "";
+    fondo.style.display = "none";
+    uno.style.display = "none";
+    dos.style.display = "none";
+    tres.style.display = "none";
+    cuatro.style.display = "none";
+    cinco.style.display = "none";
+    seis.style.display = "none";
+    }
+    var puntos = -1
+    function jugar2(){
+        fin_contador = 10
+        contador++;
+        setTimeout(jugar(), alert("Trata de darle 2 balazos a Adonai"));
+    }
+    function jugar(){
+        puntos++
+        document.getElementById("punteo").innerHTML  = "Puntos:" + puntos;
+
+        var numero = Math.floor((Math.random() * (7-1))+1);
+        
+        inicio.style.display = "none";
+        fondo.style.display = "";
+        if (numero == 1){
+            uno.style.display = "";
+        }if (numero == 2){
+            dos.style.display = "";  
+        }if (numero == 3){
+            tres.style.display = "";  
+        }if (numero == 4){
+            cuatro.style.display = "";  
+        }if (numero == 5){
+            cinco.style.display = "";  
+        }if (numero == 6){
+            seis.style.display = "";  
+        } else {  
+        }
+    }
+    function ocultaruno(){
+        uno.style.display = "none";
+        jugar();
+    }
+    function ocultardos(){
+        dos.style.display = "none";
+        jugar();
+    }
+    function ocultartres(){
+        tres.style.display = "none";
+        jugar();
+    }
+    function ocultarcuatro(){
+        cuatro.style.display = "none";
+        jugar();
+    }
+    function ocultarcinco(){
+        cinco.style.display = "none";
+        jugar();
+    }
+    function ocultarseis(){
+        seis.style.display = "none";
+        jugar();
+    }
+ 
+    
+    var contador = 0;
+    var fin_contador = 10;
+    var myVar = setInterval("cuenta()",1000);
+    function cuenta(){
+        if(fin_contador == 0 && contador == 1){
+            fin_contador = fin_contador - 1;
+            alert("Game Over. Su puntuación es de: " + puntos + " puntos.");
+            clearInterval(myVar);
+            location.reload();
+        }else{
+            document.getElementById("contador").innerHTML  = "Tiempo:" + fin_contador;
+            fin_contador = fin_contador - 1;
+    }  
+    }
+    function inic(){
+        cuenta();
+        setInterval(myVar);
+    }
+        
+    </script>
+    
+    <style type="text/css">
+    <!--
+    body {cursor: crosshair}
+    -->
+    #Inicio{
+    background-repeat: no-repeat; 
+    height: 768px; 
+    width: 1250px;
+    background-size: cover;
+    background-position: center;
+    }
+    #Fondo{
+    background-repeat: no-repeat; 
+    height: 768px; 
+    width: auto;
+    }
+    #contador{
+     background-repeat: no-repeat; 
+     position: relative;
+     height: 40px; 
+        width: 183px;
+     background-color: black;
+        color: white;
+        font-family: 'Stencil', arial;
+        font-size: 220%;
+    }
+    #punteo{
+     background-repeat: no-repeat; 
+     position: relative;
+     height: 40px;
+     right: -1080px;
+        width: 183px;
+        top: -40px;
+     background-color: black;
+        color: white;
+        font-family: 'Stencil', arial;
+        font-size: 220%;
+    }
+    #uno{
+    background-repeat: no-repeat; 
+    position: relative;
+    left: 135px; 
+    height: 181px; 
+    width: 141px; 
+    top: 9px;
+    }
+    #dos{
+    background-repeat: no-repeat; 
+    position: relative;
+    right:-471px; 
+    height: 238px; 
+    width: 185px; 
+    top: -55px;
+    }
+    #tres{
+    background-repeat: no-repeat; 
+    position: relative;
+    right:-51px; 
+    height: 430px; 
+    width: 148px; 
+    top: 176.5px;
+    }
+    #cuatro{
+    background-repeat: no-repeat; 
+    position: relative;
+    left: 483px; 
+    height: 166px; 
+    width: 280px; 
+    top: 239px;
+    }
+    #cinco{
+    background-repeat: no-repeat; 
+    position: relative;
+    left: 1054px; 
+    height: 445px; 
+    width: 154px; 
+    top: 50px;
+    }
+    #seis{
+    background-repeat: no-repeat; 
+    position: relative;
+    left: 738px; 
+    height: 430px; 
+    width: 203px; 
+    top: 258px;
+    }
+    .boton{
+        background-color: black;
+        color: white;
+        font-family: 'Stencil', arial;
+        font-size: 200%;        
+        position: relative;
+        top: 450px;
+        right:-550px;
+        padding: 20px;
+    }
+    
+    </style>
+    
+</body>
+</html>
